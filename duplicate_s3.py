@@ -57,3 +57,20 @@ scheduler = BlockingScheduler()
 scheduler.add_job(stream_service, 'interval', seconds=30)
 scheduler.start()
 
+
+#Code for AWS S3 bucket
+access_key = " "
+secret_key = " "
+
+conn = boto.connect_s3(access_key, secret_key)
+bucket = conn.create_bucket('')
+bucket = conn.get_bucket('')
+# bucket = conn.delete_bucket('hammadrazakhann')
+#print(bucket)
+
+csv_file = pd.read_csv('data.csv') 
+s3 = boto.client('s3', access_key, secret_key)
+a = StringIO()
+csv_file.to_csv(a, header=True, index=False)
+a.seek(0)
+s3.put_object(Bucket ='', body =a.getvalue(), Key = 'data.csv')
