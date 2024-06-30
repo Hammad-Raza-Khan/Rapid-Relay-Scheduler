@@ -22,9 +22,9 @@ def stream_service():
     send_email()
 
 def send_email():
-    sender_address = 'tmail9863@gmail.com'
-    sender_pass = 'trst zsoi khun lgcz'
-    receiver_address = 'hammadrazakhann@gmail.com'
+    sender_address = ''           //Your email
+    sender_pass = ''                //Passkey
+    receiver_address = ''              //Receiver's Adrress
     
 # Multipurpose Internet Mail Extensions = for ascii and attachments
     message = MIMEMultipart() 
